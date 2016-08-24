@@ -22,4 +22,6 @@ A merge conflict arises when your current branch and the branch you're trying to
 ````Automatic merge failed; fix conflicts then commit the result.````
 This pauses the merge process and requires the files to be resolved to fix the conflict. 
 
+**Edit for mentioning a teachers name here**
+
 

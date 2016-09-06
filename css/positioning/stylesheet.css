@@ -1,20 +1,24 @@
+.dressed-octopus {
+	position: relative;
+	top:20%;
+	right:10%;
+}
 
-.octopus {
-	position: fixed;
+#octopus {
+	position: relative;
   	top: 20%;
-  	left: 40%;
+  	left: 50%;
 }
 
-.hat {
-	position: absolute;
-	top: 10%;
-	left: 39%;
+#hat {
+	position: relative;
+	top: -340px;
+	left: -23px;
 }
 
 
-.glasses {
-	position: absolute;
-	top: 34%;
-	left: 43%;
+#glasses {
+	position: relative;
+	top: -15px;
+	left: 65px;
 }
-

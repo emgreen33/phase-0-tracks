@@ -10,6 +10,14 @@
 	margin-bottom: 10px;
 }
 
+.job:hover {
+	background-color: #a3b356;
+}
+
+section >p {
+	background-color: #dddddd;
+}
+
 .smaller {
 	font-size: .8em;
 }

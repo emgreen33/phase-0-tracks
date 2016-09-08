@@ -1,24 +1,19 @@
-.dressed-octopus {
-	position: relative;
-	top:20%;
-	right:10%;
-}
-
 #octopus {
-	position: relative;
-  	top: 20%;
-  	left: 50%;
+	margin-top: 120px;
+	position: absolute;
+  	/*top: 120px;*/
+  	margin-left: 530px;
 }
 
 #hat {
-	position: relative;
-	top: -340px;
-	left: -23px;
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 510px;
 }
 
 
 #glasses {
-	position: relative;
-	top: -15px;
-	left: 65px;
+	position: absolute;
+	margin-top: 220px;
+	margin-left: 570px;
 }

@@ -1,22 +1,31 @@
-.dressed-octopus {
+body {
 	position: relative;
+	width:100%;
 }
 
-#octopus {
-	margin-top: 120px;
-	position: absolute;
-  	margin-left: 530px;
+img#octopus {
+	display:block;
+	margin:auto;
+	margin-top: 150px;
+	z-index: -1;
 }
 
-#hat {
-	position: absolute;
-	margin-top: 50px;
-	margin-left: 510px;
+img#hat {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	left:30px;
+	right:5px;
+	top:-70px;
+	z-index:1;
 }
 
-
-#glasses {
-	position: absolute;
-	margin-top: 220px;
-	margin-left: 570px;
+img#glasses {
+	position:absolute;
+	margin-left:auto;
+	margin-right:auto;
+	left:5px;
+	right:0px;
+	top:100px;
+	z-index:2; 
 }

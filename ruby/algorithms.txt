@@ -1,0 +1,33 @@
+*Robot using an elevator*
+- Until elevator doors open
+    - press call button 
+- When doors open move forward until a wall is reached (back wall)
+- Move left along back wall until a corner is reached (left wall)
+- Move left along left wall until a corner is reached (front wall)
+- When in front of buttons place finger in front of (but not pressing) the bottom left button
+    - until destination floor button is the same as the number button on the wall move finger up the line of buttons
+        - if there is no button above the current one move right one button and continue down
+        - if there is no button below the current button, move right one button and continue up 
+    - press destination floor button and return hand to side of body, move left along front wall until a corner is reached (right wall) and pivot 90 degrees right
+    - when doors open at destination floor walk forward and exit elevator
+
+*Making coffee in a french press*
+- Open kettle and place under tap
+    - until kettle is 90% full of water hold under the tap and fill with water
+    - turn tap off
+    - place the kettle on it's stand and press on 
+- Place 2 scoops of coffee beans in the grinder and put the lid on
+    - grind for 5 seconds 
+    - take lid off grinder
+- Take lid off french press and pour ground beans into french press 
+- When kettle is boiled pour hot water in until it is half filled
+    - stir for 3 seconds and put the lid on and wait 2 minutes
+    - take lid off and pour hot water in until it is 90% full 
+    - place french press lid back on and wait 2 minutes
+- When two minutes have passed press down the french press 
+- Grab favourite mug out of mug cupboard and place on counter
+- Pour coffee into mug until 90% full 
+- Drink coffee
+
+
+    

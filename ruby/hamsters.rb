@@ -18,3 +18,6 @@ if age == ""
 else
     age = age.to_i
 end
+
+
+puts "Name is: #{hamster_name}, Squeakiness is: #{noise_level}, Fur color is: #{color_fur}, Friendly #{friendly}, Estimated age: #{age}"

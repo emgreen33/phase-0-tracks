@@ -5,6 +5,15 @@ employees = gets.chomp.to_i
 
 i = 1
 until i > employees
+    puts "Name any allergies you have one at a time"
+    while true
+        allergies = gets.chomp
+        if allergies == "done"
+            break
+        else
+            true
+        end
+    end
     puts "What is your name?"
     name = gets.chomp
     puts "How old are you?"
@@ -33,4 +42,3 @@ until i > employees
     i += 1
 end
 
-# puts result

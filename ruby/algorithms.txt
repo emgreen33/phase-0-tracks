@@ -7,13 +7,14 @@
 - When in front of buttons place finger in front of (but not pressing) the bottom left button
     - until destination floor button is the same as the number button on the wall move finger up the line of buttons
         - if there is no button above the current one move right one button and continue down
-        - if there is no button below the current button, move right one button and continue up 
+        - elsif there is no button below the current button, move right one button and continue up 
     - press destination floor button and return hand to side of body, move left along front wall until a corner is reached (right wall) and pivot 90 degrees right
-    - when doors open at destination floor walk forward and exit elevator
+- When doors open at destination floor walk forward and exit elevator
 
 *Making coffee in a french press*
 - Open kettle and place under tap
-    - until kettle is 90% full of water hold under the tap and fill with water
+    - until kettle is full of water 
+        - hold under the tap and fill with water
     - turn tap off
     - place the kettle on it's stand and press on 
 - Place 2 scoops of coffee beans in the grinder and put the lid on
@@ -25,9 +26,12 @@
     - take lid off and pour hot water in until it is 90% full 
     - place french press lid back on and wait 2 minutes
 - When two minutes have passed press down the french press 
-- Grab favourite mug out of mug cupboard and place on counter
-- Pour coffee into mug until 90% full 
-- Drink coffee
+    - Grab favourite mug out of mug cupboard and place on counter
+        - if coffee mug clean
+            - pour coffee into mug until 90% full
+        - else
+            - grab new mug
+- Drink coffee 
 
 
     

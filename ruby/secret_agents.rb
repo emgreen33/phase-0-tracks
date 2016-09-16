@@ -9,13 +9,16 @@
 def encrypt(string)
     index = 0
     while index < string.length
-        string[index] = string[index].next
+        if string[index] == "z"
+            string[index] = "a"
+        else
+            string[index] = string[index].next
+        end
         index += 1
     end
     string
 end
 
-p encrypt("hello")
 
 # Decrypt
 # 1. Define a decrypt method which takes a string argument as its parameter
@@ -29,3 +32,14 @@ p encrypt("hello")
 def decrypt(string)
     index = 0
     alphabet = "abcdefghijklmnopqrstuvwxyz"
+    while index < string.length
+        string[index] = alphabet[alphabet.index(string[index])-1]
+        index += 1
+    end
+    string
+end
+
+p encrypt("abc")
+p encrypt("zed")
+p decrypt("bcd")
+p decrypt("afe")

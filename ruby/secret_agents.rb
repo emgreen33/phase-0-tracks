@@ -39,12 +39,39 @@ def decrypt(string)
     string
 end
 
-p encrypt("abc")
-p encrypt("zed")
-p decrypt("bcd")
-p decrypt("afe")
+# p encrypt("abc")
+# p encrypt("zed")
+# p decrypt("bcd")
+# p decrypt("afe")
 
-p decrypt(encrypt("swordfish"))
+# p decrypt(encrypt("swordfish"))
 
 #The nested method works because it is using two global methods that can be called together anywhere in the global scope of the program.
+
+#"Driver Code"
+puts "would you like to encrypt or decrypt your password?"
+method = gets.chomp.downcase
+
+if method == "encrypt"
+    method = true
+elsif method == "decrypt"
+    method = true
+else
+    until method == "encrypt" || method == "decrypt "
+        puts "Please input encrypt or decrypt?"
+        method = gets.chomp.downcase
+    end
+end
+
+puts "what is your password?"
+password = gets.chomp
+  #if user inputs encrypt, encrypt the password
+if method == "encrypt"
+    new_password = encrypt(password)
+    #else decrypts password
+else
+    new_password = decrypt(password)
+end
+#returns new password
+puts new_password
 

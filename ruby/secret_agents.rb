@@ -33,7 +33,11 @@ def decrypt(string)
     index = 0
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     while index < string.length
-        string[index] = alphabet[alphabet.index(string[index])-1]
+        if string[index] == "a"
+            string[index] = "z"
+        else
+            string[index] = alphabet[alphabet.index(string[index])-1]
+        end
         index += 1
     end
     string

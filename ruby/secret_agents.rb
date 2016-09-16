@@ -43,3 +43,8 @@ p encrypt("abc")
 p encrypt("zed")
 p decrypt("bcd")
 p decrypt("afe")
+
+p decrypt(encrypt("swordfish"))
+
+#The nested method works because it is using two global methods that can be called together anywhere in the global scope of the program.
+

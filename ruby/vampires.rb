@@ -1,4 +1,5 @@
 
+#Vampire Survey:
 
 puts "How many employees will be processed?"
 employees = gets.chomp.to_i
@@ -52,5 +53,6 @@ until i > employees
     puts result
     i += 1
 end
+
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 

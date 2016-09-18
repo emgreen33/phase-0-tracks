@@ -34,9 +34,6 @@ until i > employees
             break
         end
     end
-    if name == "Drake Cula" || name == "Tu Fang"
-        result = "Definitely a vampire."
-    end
     unless result != nil
         if (age == (Time.now.year- year)) && (order == "yes" || insurance == "yes")
             result = "Probably not a vampire."

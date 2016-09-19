@@ -8,10 +8,11 @@ age = gets.chomp.to_i
 puts "How many children do they have?"
 kids = gets.chomp.to_i
 puts "What are their favourite colors?"
-color = gets.chomp
-colors = color.split(" ")
+colors = gets.chomp.split(" ")
 puts "Do they have a pool?"
 pool = gets.chomp
+puts "What are their ideal floor materials? i.e. hardwood, marble etc"
+flooring = gets.chomp.split(" ")
 
 # - save their answers as key: value pairs in a hash
 client = {
@@ -19,7 +20,8 @@ client = {
     age: age,
     kids: kids,
     colors: colors,
-    pool: pool
+    pool: pool,
+    flooring: flooring
 }
 
 # - print the hash when all questions answered
@@ -34,7 +36,7 @@ if answer.downcase != "none"
     key = gets.chomp
     puts "What is the correct answer?"
     new_value = gets.chomp
-    if key == "colors"
+    if key == "colors" || key == "flooring"
         new_value = new_value.split(" ")
     elsif new_value =~ /\d/
         new_value = new_value.to_i

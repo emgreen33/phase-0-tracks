@@ -8,6 +8,7 @@ p "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
  p "zom".sub("o", "oo")
+ p "zom".gsub("o", "oo")
 # => “zoom”
 
 p "enhance".center(15)

@@ -36,7 +36,8 @@ p "Elementary,    my   dear        Watson!".squeeze(" ")
 
 p "z".ord
 # => 122
-# (What is the significance of the number 122 in relation to the character z?) 122 is the ASCII Code for the lowercase letter "z", ASCII code (The American Standard Code for Information Interchange) and is the set of symbols and characters that are used to write language.
+# (What is the significance of the number 122 in relation to the character z?)
+#122 is the ASCII Code for the lowercase letter "z", ASCII code (The American Standard Code for Information Interchange) and is the set of symbols and characters that are used to write language.
 
 p "How many times does the letter 'a' appear in this string?".count("a")
 # => 4

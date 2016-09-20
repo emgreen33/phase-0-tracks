@@ -9,6 +9,23 @@
 #capitalize the letter string and return it
 #if the letter is z we have to hard code it to be an a
 
+def next_vowel(letter)
+    vowels = vowels = ["a", "e", "i", "o", "u"]
+    if vowels.include?(letter)
+        letter = vowels[vowels.index(letter)+1]
+    end
+end
+
+def next_consonant(letter)
+    alphabet = ("a".."z").to_a
+    vowels = ["a", "e", "i", "o", "u"]
+    consonants = alphabet - vowels
+    if consonants.include?(letter)
+        letter = consonants[consonants.index(letter)+1]
+    end
+end
+
+
 
 def alias_name(name)
     real_names = name.downcase.split(" ")
@@ -25,12 +42,16 @@ def alias_name(name)
     while index < letters.length
         if letters[index] == "z"
             letters[index] = "a"
+
         elsif vowels.include?(letters[index])
             puts "there is a vowel"
-            letters[index] = vowels[vowels.index(letters[index])+1]
+            # letters[index] = vowels[vowels.index(letters[index])+1]
+            letters[index] = next_vowel(letters[index])
+
         elsif consonants.include?(letters[index])
             puts "there is a consonant"
-            letters[index] = consonants[consonants.index(letters[index])+1]
+            # letters[index] = consonants[consonants.index(letters[index])+1]
+            letters[index] = next_consonant(letters[index])
         end
         index += 1
     end
@@ -41,6 +62,3 @@ end
 p alias_name("Adam Greenz")
 p alias_name("Felicia Torres")
 
-
-# def next_vowel(letter)
-#     vowels =

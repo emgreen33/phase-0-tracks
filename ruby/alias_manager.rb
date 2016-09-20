@@ -65,7 +65,9 @@ name_hash = Hash.new
 while true
     puts "Enter names to change, when you are done type quit"
     name = gets.chomp
-    if name == "quit"
+    if name =~ /\d/
+        puts "You entered an invalid name. Please only use letters."
+    elsif name == "quit"
         break
     else
         fake_name = alias_name(name)

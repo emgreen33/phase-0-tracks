@@ -1,13 +1,25 @@
-#first we want to split the string of names into an array of words
-#then we want to swap the first and last names
-#then we want to split the array of names into an array of letters
-#then we have to have two arrays: 1) consonants 2)vowels
-# if the letter is in the consonant array, use the letter as the index of the consonant array and add one to it
-#if the letter is in the vowel array, we use the letter as the index of the vowel array and add one to it
-#increase the index value by 1 until the while loop ends
+#Release 0:
+ # - define a method to make an alias name that takes a name string as a paramater
+# - split the string of names into an array of words
+#         - swap the first and last names
+#         - split the array of names into an array of letters
+# - create two arrays: 1) consonants 2)vowels
+# - if the letter is in the consonant array
+#         # - if the letter is z, it becomes b
+#         # - else use the letter as the index of the consonant array and add one to it
+# - if the letter is in the vowel array,
+#         - if the letter is u it becomes a
+#         - else we use the letter as the index of the vowel array and add one to it
+# increase the index value by 1 until the while loop ends
 # join the letter array
-#capitalize the letter string and return it
-#if the letter is z we have to hard code it to be an a
+# capitalize the letter string and return it
+
+
+def swap_names(name)
+    real_names = name.downcase.split(" ")
+    real_names[0], real_names[-1] = real_names[-1], real_names[0]
+    real_names.join(" ")
+end
 
 def next_vowel(letter)
     vowels = ["a", "e", "i", "o", "u"]
@@ -34,10 +46,11 @@ def capitalize_name(name)
 end
 
 def alias_name(name)
-    real_names = name.downcase.split(" ")
-    real_names[0], real_names[-1] = real_names[-1], real_names[0]
-    # p real_names
-    letters = real_names.join(" ").split("")
+    # real_names = name.downcase.split(" ")
+    # real_names[0], real_names[-1] = real_names[-1], real_names[0]
+    # # p real_names
+    # letters = real_names.join(" ").split("")
+    letters = swap_names(name).split("")
     # p letters
     index = 0
     alphabet = ("a".."z").to_a
@@ -60,6 +73,14 @@ def alias_name(name)
 end
 
 # p alias_name("Felicia Torres")
+
+# Release 1 + Release 2: Provide user interface and store aliases
+# Ask user to enter a name and return this input as an alias name by running the method on it
+# Exit the loop asking them for the name when they return 'quit'
+        # - if the name includes numbers return an error but keep asking
+        # - else store the name in a hash
+# Print all the names the user entered in a sentence using the key:value pairs
+
 
 name_hash = Hash.new
 while true

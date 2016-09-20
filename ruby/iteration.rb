@@ -49,7 +49,7 @@ p letters
 p new_letters
 
 
-#We made array and hashes to use
+#Make array and hashes to use
 animals = ["dog", "cat", "cow", "hippo"]
 languages = {
     america: "English",
@@ -76,7 +76,6 @@ languages = {
     portugal: "Portugese"
 }
 
-#deleting:
 p animals.delete_if {|name| name.length < 4 }
 p languages.delete_if { |country, language| country.length < 6 && language.length > 4}
 

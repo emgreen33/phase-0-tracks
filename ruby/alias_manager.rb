@@ -10,10 +10,9 @@
 # - if the letter is in the vowel array,
 #         - if the letter is u it becomes a
 #         - else we use the letter as the index of the vowel array and add one to it
-# increase the index value by 1 until the while loop ends
-# join the letter array
-# capitalize the letter string and return it
-
+# - increase the index value by 1 until the while loop ends
+# - join the letter array into a string
+# - capitalize the letter string and return it
 
 def swap_names(name)
     real_names = name.downcase.split(" ")
@@ -46,24 +45,15 @@ def capitalize_name(name)
 end
 
 def alias_name(name)
-    # real_names = name.downcase.split(" ")
-    # real_names[0], real_names[-1] = real_names[-1], real_names[0]
-    # # p real_names
-    # letters = real_names.join(" ").split("")
     letters = swap_names(name).split("")
-    # p letters
     index = 0
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
     while index < letters.length
         if vowels.include?(letters[index])
-            # puts "there is a vowel"
-            # letters[index] = vowels[vowels.index(letters[index])+1]
             letters[index] = next_vowel(letters[index])
         elsif consonants.include?(letters[index])
-            # puts "there is a consonant"
-            # letters[index] = consonants[consonants.index(letters[index])+1]
             letters[index] = next_consonant(letters[index])
         end
         index += 1
@@ -73,7 +63,6 @@ def alias_name(name)
 end
 
 # p alias_name("Felicia Torres")
-
 
 # Release 1 + Release 2: Provide user interface and store aliases
 # Ask user to enter a name and return this input as an alias name by running the method on it
@@ -92,10 +81,10 @@ while true
         break
     else
         fake_name = alias_name(name)
-        name_hash.store(name.to_sym, fake_name)
+        name_hash.store(capitalize_name(name).to_sym, fake_name)
     end
 end
 
-# p name_hash
+#p name_hash
 
 name_hash.each {| key, value | puts "#{key} is also knowns as #{value}"}

@@ -78,5 +78,3 @@ end
 # p name_hash
 
 name_hash.each {| key, value | puts "#{key} is also knowns as #{value}"}
-
-

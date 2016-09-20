@@ -29,30 +29,25 @@ def capitalize_name(name)
     name.split.map { |name| name.capitalize}.join(" ")
 end
 
-
 def alias_name(name)
     real_names = name.downcase.split(" ")
     real_names[0], real_names[-1] = real_names[-1], real_names[0]
-    p real_names
+    # p real_names
     letters = real_names.join(" ").split("")
-    p letters
-
+    # p letters
     index = 0
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
-
     while index < letters.length
         if letters[index] == "z"
             letters[index] = "a"
-
         elsif vowels.include?(letters[index])
-            puts "there is a vowel"
+            # puts "there is a vowel"
             # letters[index] = vowels[vowels.index(letters[index])+1]
             letters[index] = next_vowel(letters[index])
-
         elsif consonants.include?(letters[index])
-            puts "there is a consonant"
+            # puts "there is a consonant"
             # letters[index] = consonants[consonants.index(letters[index])+1]
             letters[index] = next_consonant(letters[index])
         end
@@ -62,7 +57,22 @@ def alias_name(name)
     capitalize_name(new_names)
 end
 
+# p alias_name("Felicia Torres")
 
-p alias_name("Adam Greenz")
-p alias_name("Felicia Torres")
+name_hash = Hash.new
+while true
+    puts "Enter names to change, when you are done type quit"
+    name = gets.chomp
+    if name == "quit"
+        break
+    else
+        fake_name = alias_name(name)
+        name_hash.store(name.to_sym, fake_name)
+    end
+end
+
+# p name_hash
+
+name_hash.each {| key, value | puts "#{key} is also knowns as #{value}"}
+
 

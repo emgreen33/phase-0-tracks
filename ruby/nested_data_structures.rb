@@ -1,5 +1,6 @@
 students = {
     teddy: {
+        full_name: "Teddy Roosevelt",
         english: "A",
         math: "C",
         french: "A",
@@ -15,6 +16,7 @@ students = {
     },
 
     toby: {
+        full_name: "Toby McGuire",
         english: "B",
         math: "B",
         french: "D",
@@ -29,6 +31,7 @@ students = {
     },
 
     dory: {
+        full_name: "Doris Day",
         english: "N/A",
         math: "B",
         french: "D",
@@ -44,8 +47,13 @@ students = {
     },
 }
 
-# Once you've built it, print a few individual pieces of deeply nested data from the structure, showing that you know how to use multiple indexes or hash keys (or both) to access nested items. Try to demonstrate a few different types of access.
+# Once you've built it, print a few individual pieces of deeply nested data from the structure,
+#showing that you know how to use multiple indexes or hash keys (or both) to access nested items.
+#Try to demonstrate a few different types of access.
 
 p students[:dory][:extra_curric][0]
+#=> "Tennis Team"
 p students[:toby][:english]
+#=> "B"
 p students[:teddy][:science][:chemistry]
+#=> 95

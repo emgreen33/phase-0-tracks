@@ -57,3 +57,13 @@ p students[:toby][:english]
 #=> "B"
 p students[:teddy][:science][:chemistry]
 #=> 95
+
+#Add dancing to extracurricular activities for Dory
+students[:dory][:extra_curric].push("Dancing")
+p students[:dory][:extra_curric]
+#=>["Tennis Team", "Glee Club", "Dancing"]
+
+#Reassign the value of english
+students[:dory][:english] = "A"
+p students[:dory][:english]
+#=> "A"

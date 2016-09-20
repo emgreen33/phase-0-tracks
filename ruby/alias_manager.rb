@@ -25,6 +25,9 @@ def next_consonant(letter)
     end
 end
 
+def capitalize_name(name)
+    name.split.map { |name| name.capitalize}.join(" ")
+end
 
 
 def alias_name(name)
@@ -56,6 +59,7 @@ def alias_name(name)
         index += 1
     end
     new_names = letters.join("")
+    capitalize_name(new_names)
 end
 
 

@@ -42,7 +42,7 @@ def next_consonant(letter)
 end
 
 def capitalize_name(name)
-    name.split.map { |name| name.capitalize}.join(" ")
+    name.split(" ").map { |name| name.capitalize}.join(" ")
 end
 
 def alias_name(name)
@@ -74,13 +74,13 @@ end
 
 # p alias_name("Felicia Torres")
 
+
 # Release 1 + Release 2: Provide user interface and store aliases
 # Ask user to enter a name and return this input as an alias name by running the method on it
 # Exit the loop asking them for the name when they return 'quit'
         # - if the name includes numbers return an error but keep asking
         # - else store the name in a hash
 # Print all the names the user entered in a sentence using the key:value pairs
-
 
 name_hash = Hash.new
 while true

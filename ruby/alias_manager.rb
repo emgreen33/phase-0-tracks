@@ -10,8 +10,10 @@
 #if the letter is z we have to hard code it to be an a
 
 def next_vowel(letter)
-    vowels = vowels = ["a", "e", "i", "o", "u"]
-    if vowels.include?(letter)
+    vowels = ["a", "e", "i", "o", "u"]
+    if letter == "u"
+        letter = "a"
+    elsif vowels.include?(letter)
         letter = vowels[vowels.index(letter)+1]
     end
 end
@@ -20,7 +22,9 @@ def next_consonant(letter)
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
-    if consonants.include?(letter)
+    if letter == "z"
+        letter = "b"
+    elsif consonants.include?(letter)
         letter = consonants[consonants.index(letter)+1]
     end
 end
@@ -40,9 +44,7 @@ def alias_name(name)
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
     while index < letters.length
-        if letters[index] == "z"
-            letters[index] = "a"
-        elsif vowels.include?(letters[index])
+        if vowels.include?(letters[index])
             # puts "there is a vowel"
             # letters[index] = vowels[vowels.index(letters[index])+1]
             letters[index] = next_vowel(letters[index])

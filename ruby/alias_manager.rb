@@ -1,18 +1,20 @@
 #Release 0:
- # - define a method to make an alias name that takes a name string as a paramater
+# - define a method to make an alias name that takes a name string as a paramater
 # - split the string of names into an array of words
-#         - swap the first and last names
+#         - swap the first and last names (helper method)
 #         - split the array of names into an array of letters
 # - create two arrays: 1) consonants 2)vowels
-# - if the letter is in the consonant array
-#         # - if the letter is z, it becomes b
-#         # - else use the letter as the index of the consonant array and add one to it
-# - if the letter is in the vowel array,
-#         - if the letter is u it becomes a
-#         - else we use the letter as the index of the vowel array and add one to it
-# - increase the index value by 1 until the while loop ends
+# - iterate through the array of letters and check whether it's a consonant, vowel, or a space
+#       - if the letter is in the consonant array (helper method)
+#         #     - if the letter is z, it becomes b
+#         #     - else use the letter as the index of the consonant array and add one to it
+#       - elsif the letter is in the vowel array (helper method)
+#               - if the letter is u it becomes a
+#               - else we use the letter as the index of the vowel array and add one to it
+#       - else it must be a space so leave it unchanged
 # - join the letter array into a string
-# - capitalize the letter string and return it
+# - capitalize the letter string (helper method) and return it
+#-----------------------------------------------------------------------------------------------------------------------
 
 def swap_names(name)
     real_names = name.downcase.split(" ")
@@ -50,30 +52,40 @@ def alias_name(name)
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
-    while index < letters.length
-        if vowels.include?(letters[index])
-            letters[index] = next_vowel(letters[index])
-        elsif consonants.include?(letters[index])
-            letters[index] = next_consonant(letters[index])
+    # while index < letters.length
+    #     if vowels.include?(letters[index])
+    #         letters[index] = next_vowel(letters[index])
+    #     elsif consonants.include?(letters[index])
+    #         letters[index] = next_consonant(letters[index])
+    #     end
+    #     index += 1
+    # end
+    # new_names = letters.join("")
+     new_letters = letters.map do |letter|
+        if vowels.include?(letter)
+            letter = next_vowel(letter)
+        elsif consonants.include?(letter)
+            letter = next_consonant(letter)
+        else
+            letter
         end
-        index += 1
     end
-    new_names = letters.join("")
+    new_names = new_letters.join("")
     capitalize_name(new_names)
 end
 
-# p alias_name("Felicia Torres")
-
+#------------------------------------------------------------------------------------------------------------------------
 # Release 1 + Release 2: Provide user interface and store aliases
-# Ask user to enter a name and return this input as an alias name by running the method on it
-# Exit the loop asking them for the name when they return 'quit'
+# - Ask user to enter a name and return this input as an alias name by running the method on it
+# - Exit the loop asking them for the name when they return 'quit'
         # - if the name includes numbers return an error but keep asking
         # - else store the name in a hash
-# Print all the names the user entered in a sentence using the key:value pairs
+# - Iterate through the hash and print all the name key:value pairs using the key:value pairs
+#-------------------------------------------------------------------------------------------------------------------------
 
 name_hash = Hash.new
+puts "Enter names to change, when you are done type quit."
 while true
-    puts "Enter names to change, when you are done type quit"
     name = gets.chomp
     if name =~ /\d/
         puts "You entered an invalid name. Please only use letters."
@@ -85,6 +97,16 @@ while true
     end
 end
 
-#p name_hash
-
 name_hash.each {| key, value | puts "#{key} is also knowns as #{value}"}
+
+#-------------------------------------------------------------------------------------------------------------------------
+# Enter names to change, when you are done type quit.
+# Emily Green
+# Zu zU
+# Felicia Torres
+# 9
+# You entered an invalid name. Please only use letters.
+# quit
+# Emily Green is also knowns as Hsiip Inomz
+# Zu Zu is also knowns as Ba Ba
+# Felicia Torres is also knowns as Vussit Gimodoe

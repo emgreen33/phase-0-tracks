@@ -35,6 +35,7 @@ def next_consonant(letter)
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
+    # consonants = alphabet.delete_if { |letter| vowels.include?(letter)}
     if letter == "z"
         letter = "b"
     elsif consonants.include?(letter)

@@ -58,7 +58,6 @@ def bubble_sort(array)
     array
 end
 
-
 array = [1,5,6,3,5,3,7]
 
 p bubble_sort(array)

@@ -1,4 +1,4 @@
-#Release 0:
+# Alias Manager Prgoram
 # - define a method to make an alias name that takes a name string as a paramater
 # - split the string of names into an array of words
 #         - swap the first and last names (helper method)
@@ -35,7 +35,6 @@ def next_consonant(letter)
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
-    # consonants = alphabet.delete_if { |letter| vowels.include?(letter)}
     if letter == "z"
         letter = "b"
     elsif consonants.include?(letter)
@@ -53,15 +52,6 @@ def alias_name(name)
     alphabet = ("a".."z").to_a
     vowels = ["a", "e", "i", "o", "u"]
     consonants = alphabet - vowels
-    # while index < letters.length
-    #     if vowels.include?(letters[index])
-    #         letters[index] = next_vowel(letters[index])
-    #     elsif consonants.include?(letters[index])
-    #         letters[index] = next_consonant(letters[index])
-    #     end
-    #     index += 1
-    # end
-    # new_names = letters.join("")
      new_letters = letters.map do |letter|
         if vowels.include?(letter)
             letter = next_vowel(letter)
@@ -76,7 +66,7 @@ def alias_name(name)
 end
 
 #------------------------------------------------------------------------------------------------------------------------
-# Release 1 + Release 2: Provide user interface and store aliases
+# Provide user interface and store aliases
 # - Ask user to enter a name and return this input as an alias name by running the method on it
 # - Exit the loop asking them for the name when they return 'quit'
         # - if the name includes numbers return an error but keep asking
@@ -102,12 +92,10 @@ name_hash.each {| key, value | puts "#{key} is also knowns as #{value}"}
 
 #-------------------------------------------------------------------------------------------------------------------------
 # Enter names to change, when you are done type quit.
-# Emily Green
 # Zu zU
 # Felicia Torres
 # 9
 # You entered an invalid name. Please only use letters.
 # quit
-# Emily Green is also knowns as Hsiip Inomz
 # Zu Zu is also knowns as Ba Ba
 # Felicia Torres is also knowns as Vussit Gimodoe

@@ -18,4 +18,20 @@ p search_array([1,4,2,5], 2)
 # => nil
 
 
-#
+#Release 1
+def fib(num)
+    array = [0, 1]
+    previous = 0
+    current = 1
+    (num - 2).times do | i |
+        next_num = previous + current
+        array.push(next_num)
+        previous = current
+        current = next_num
+    end
+    array
+end
+
+p fib(100)[-1]
+
+#Release 2

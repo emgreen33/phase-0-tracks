@@ -36,20 +36,12 @@ answer = gets.chomp
 until answer.downcase == "none"
     puts "What key would you like to update?"
     key = gets.chomp
-    if key == "colors"
-        puts "What color would you like to update?"
-        color = gets.chomp
-        puts "What is the new color?"
-        new_color = gets.chomp
-        colors = colors.join(",").gsub(color, new_color).split(",")
-        new_value = colors
-    elsif key == "flooring"
-        puts "What flooring material would you like to update?"
-        floor = gets.chomp
-        puts "What is the new flooring material?"
-        new_flooring = gets.chomp
-        flooring = flooring.join(",").gsub(floor, new_flooring).split(",")
-        new_value = flooring
+    if client[(key.to_sym)].is_a?(Array)
+        puts "What value do you want to update?"
+        old_value = gets.chomp
+        puts "What is the new answer?"
+        new_answer = gets.chomp
+        new_value = client[(key.to_sym)].join(",").gsub(old_value, new_answer).split(",")
     else
         puts "What is the corrent answer?"
         new_value = gets.chomp
@@ -67,4 +59,6 @@ until answer.downcase == "none"
         end
 end
 
+# - print out the updated hash
 p client
+

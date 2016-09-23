@@ -12,7 +12,7 @@ kids = gets.chomp.to_i
 puts "What are their favourite colors?"
 colors = gets.chomp.split(" ")
 puts "Do they have a pool?"
-pool = gets.chomp
+pool = gets.chomp.capitalize
 puts "What are their ideal floor materials? i.e. hardwood, marble etc"
 flooring = gets.chomp.split(" ")
 
@@ -31,30 +31,40 @@ client = {
 p client
 
 #- ask user if they want to update any key? ask for the key if they don't say "none"
-
 puts "Do you want to update a key?"
 answer = gets.chomp
 until answer.downcase == "none"
     puts "What key would you like to update?"
     key = gets.chomp
-    puts "What is the correct answer?"
-    new_value = gets.chomp
-    if key == "colors" || key == "flooring"
-        new_value = new_value.split(" ")
-    elsif new_value =~ /\d/ && new_value !~ /[a-zA-Z]/
-        new_value = new_value.to_i
-    elsif new_value =~ /[a-zA-Z0-9]/
-        new_value = new_value
+    if key == "colors"
+        puts "What color would you like to update?"
+        color = gets.chomp
+        puts "What is the new color?"
+        new_color = gets.chomp
+        colors = colors.join(",").gsub(color, new_color).split(",")
+        new_value = colors
+    elsif key == "flooring"
+        puts "What flooring material would you like to update?"
+        floor = gets.chomp
+        puts "What is the new flooring material?"
+        new_flooring = gets.chomp
+        flooring = flooring.join(",").gsub(floor, new_flooring).split(",")
+        new_value = flooring
+    else
+        puts "What is the corrent answer?"
+        new_value = gets.chomp
+        if new_value =~ /\d/ && new_value !~ /[a-zA-Z]/
+            new_value = new_value.to_i
+        elsif new_value =~ /[a-zA-Z0-9]/
+            new_value
+        end
     end
-    client[(key.to_sym)] = new_value
-    puts "Would you like to update another?"
-    answer = gets.chomp
-    if answer.downcase == "no"
+        client[(key.to_sym)] = new_value
+        puts "Would you like to update another?"
+        answer = gets.chomp
+        if answer.downcase == "no"
         break
-    end
+        end
 end
 
-#print latest version of the hash and exit
 p client
-
-

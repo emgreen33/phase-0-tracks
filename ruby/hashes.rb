@@ -1,6 +1,8 @@
 #Interior Design Questionaire
-
 # - Ask user for their name, age, no. of children, favorite colors, if they have a pool
+# - save their answers as key: value pairs in a hash
+# - print the hash when all questions answered
+#------------------------------------------------------------------------------------------------------------------------------
 puts "What is your clients name?"
 name = gets.chomp
 puts "What is your clients address?"
@@ -16,7 +18,6 @@ pool = gets.chomp.capitalize
 puts "What are their ideal floor materials? i.e. hardwood, marble etc"
 flooring = gets.chomp.split(" ")
 
-# - save their answers as key: value pairs in a hash
 client = {
     name: name,
     address: address,
@@ -27,10 +28,21 @@ client = {
     flooring: flooring
 }
 
-# - print the hash when all questions answered
 p client
 
-#- ask user if they want to update any key? ask for the key if they don't say "none"
+#------------------------------------------------------------------------------------------------------------------------------
+# User Interface
+# - ask user if they want to update any key? ask for the key and the new value until they say "none"
+# - if the current value of the key is an array,
+#           - if it is ask the user which value in the current array they want to update
+#           - replace (substitute) the old value with the new answer
+# - else ask the user what the new value should be
+#           - if the value contains digits and no letters return it as an integer
+#           - else if the value contains numbers and/or letters keep it as a string
+# - store the new value in the clients hash
+# - ask if they want to update another, break if they respond no
+# - print out the updated hash
+#------------------------------------------------------------------------------------------------------------------------------
 puts "Do you want to update a key?"
 answer = gets.chomp
 until answer.downcase == "none"
@@ -58,7 +70,5 @@ until answer.downcase == "none"
         break
         end
 end
-
-# - print out the updated hash
 p client
 

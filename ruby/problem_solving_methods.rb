@@ -1,4 +1,11 @@
 #Release 0
+#Index Search Method
+# - define a method that is given two parameters, an array and a number to search for
+# - set variable answer to nil to update later
+# - iterate through the array checking if the number is present
+#       - if the number appears
+#               - return the index of the numbers position in the array
+# - end the search and return the answer
 
 def search_array(array, num)
     answer = nil
@@ -19,6 +26,14 @@ p search_array([1,4,2,5], 2)
 
 
 #Release 1
+#Fibonacci Numbers
+# - define a method that is given a number as a parameter
+#       - create an array with the first two numbers already present
+#       - create two integers, one of the previous number and the current one
+#            - add the previous and the current numbers together and set value to next number in array
+#            - add this new number to the end of the array and update previous and current
+# - return the new array
+
 def fib(num)
     array = [0, 1]
     previous = 0

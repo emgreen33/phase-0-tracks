@@ -1,9 +1,9 @@
+# Release 1
 # Replace in the "<???>" with the appropriate method (and arguments, if any).
 # Uncomment the calls to catch these methods red-handed.
-
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
-
+#------------------------------------------------------------------------------------------------------------------------------
 p "iNvEsTiGaTiOn".swapcase
 # => “InVeStIgAtIoN”
 
@@ -18,7 +18,7 @@ p "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
 p "the usual".ljust(18, " suspects")
-p "the usual".<< " suspects"
+p "the usual" << " suspects"
 #=> "the usual suspects"
 
 p " suspects".prepend("the usual")
@@ -36,6 +36,7 @@ p "Elementary,    my   dear        Watson!".squeeze(" ")
 
 p "z".ord
 # => 122
+
 # (What is the significance of the number 122 in relation to the character z?)
 #122 is the ASCII Code for the lowercase letter "z", ASCII code (The American Standard Code for Information Interchange) and is the set of symbols and characters that are used to write language.
 

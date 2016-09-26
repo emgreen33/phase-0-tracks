@@ -36,7 +36,7 @@ class Santa
         puts "Age: #{@age}"
     end
 end
-# ----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------
 #Add initializations as driver code, then test work by running the program from command line:
 # santas = []
 # genders = ["female", "male", "N/A", "male", "female", "N/A"]
@@ -54,7 +54,7 @@ santa.about
 santa.celebrate_birthday
 santa.about
 
-# -----------------------------------------------------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------------
 
 #Release 4: Build Many, Many Santas
 # - declare two arrays of example genders and example ethnicities

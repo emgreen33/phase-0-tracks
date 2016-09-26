@@ -1,17 +1,25 @@
-#SPECIES --------------------------------
-#Basenji Puppy
+#Release 0: Design A Class
+# - Design a class for a Puppy Class
+# - Add some characteristics (attributes) and behaviour (methods)
+# ------------------------------------------------------------------------------------------------
 
-#CHARACTERISTICS ------------------
+
+#CLASS --------------------------------
+#Puppy
+
+#ATTRIBUTES ------------------
 # Friendly: yes
-# Atheltic: yes
-# Color: tri/brown
+# Atheltic: varies
+# Color: varies
 # Diet: varies
 # Trainable: yes
 # Loud: no
+# Legs: 4
 
-# BEHAVIOR --------------------------------
+#METHODS --------------------------------
 # Eat
 # Pee
 # Run
 # Jump
-# Yodle
+# Bark
+# Sleep

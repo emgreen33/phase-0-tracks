@@ -1,5 +1,5 @@
 #Release 0, 1, 2, 3
-
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 class Santa
     attr_reader :ethnicity, :age
     attr_accessor :gender, :age
@@ -36,7 +36,8 @@ class Santa
         puts "Age: #{@age}"
     end
 end
-
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+#Add initializations as driver code, then test work by running the program from command line:
 # santas = []
 # genders = ["female", "male", "N/A", "male", "female", "N/A"]
 # ethnicities = ["white", "black", "latino", "N/A", "N/A", "black"]
@@ -44,13 +45,17 @@ end
 #     santas << Santa.new(genders[i], ethnicities[i])
 # end
 
-# santa= Santa.new("female", "white")
-# santa.about
-# santa.gender = "male"
-# santa.about
-# santa.get_mad_at("Dasher")
-# santa.about
+santa= Santa.new("female", "white")
+santa.about
+santa.gender = "male"
+santa.about
+santa.get_mad_at("Dasher")
+santa.about
+santa.celebrate_birthday
+santa.about
 
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------------------------------------------------------------------------------
 #Release 4: Build Many, Many Santas
 # - declare two arrays of example genders and example ethnicities
 # - use a while loop to generate a large number of santas

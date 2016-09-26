@@ -1,7 +1,7 @@
 #Release 0, 1, 2, 3
 # -------------------------------------------------------------------------------------------------------------------------------------------------------
 class Santa
-    attr_reader :ethnicity, :age
+    attr_reader :ethnicity
     attr_accessor :gender, :age
 
     def initialize(gender, ethnicity)

@@ -4,19 +4,19 @@
 # ------------------------------------------------------------------------------------------------
 
 
-#CLASS --------------------------------
+#CLASS
 #Puppy
 
-#ATTRIBUTES ------------------
+#ATTRIBUTES
 # Friendly: yes
 # Atheltic: varies
 # Color: varies
 # Diet: varies
 # Trainable: yes
-# Loud: no
+# Loud: varies
 # Legs: 4
 
-#METHODS --------------------------------
+#METHODS
 # Eat
 # Pee
 # Run

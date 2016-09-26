@@ -1,10 +1,22 @@
 class Santa
+    attr_reader :ethnicity, :age
+    attr_accessor :gender
+
     def initialize(gender, ethnicity)
         puts "Initializing Santa instance..."
         @gender = gender
         @ethnicity = ethnicity
         @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
         @age = 0
+    end
+
+    def celebrate_birthday
+        @age += 1
+    end
+
+    def get_mad_at(name)
+        @reindeer_ranking.delete(name)
+        @reindeer_ranking << name
     end
 
     def speak
@@ -21,36 +33,7 @@ class Santa
         puts "Reindeer ranking: #{@reindeer_ranking}"
         puts "Age: #{@age}"
     end
-
-    #attribute-changing methods for attributes
-    def celebrate_birthday
-        @age += 1
-    end
-
-    def get_mad_at(name)
-        @reindeer_ranking.delete(name).push(name)
-    end
-
-    #setter-method: makes something writeable
-    def gender=(new_gender)
-        @gender = new_gender
-    end
-
-    #getter-method: makes something readable
-    def age
-        @age
-    end
-
-    def ethnicity
-        @ethnicity
-    end
 end
-
-# santa= Santa.new("female", "white")
-# santa.speak
-# santa.eat_milk_and_cookies("tim tam")
-# santa.about
-# puts "#{santa.age} is something"
 
 # santas = []
 # genders = ["female", "male", "N/A", "male", "female", "N/A"]
@@ -63,3 +46,16 @@ santa= Santa.new("female", "white")
 santa.about
 santa.gender = "male"
 santa.about
+santa.get_mad_at("Dasher")
+santa.about
+
+#Should return:
+# Initializing Santa instance...
+# Gender: female
+# Ethnicity: white
+# Reindeer ranking: ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+# Age: 0
+# Gender: male
+# Ethnicity: white
+# Reindeer ranking: ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+# Age: 0

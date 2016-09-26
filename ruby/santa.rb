@@ -65,7 +65,7 @@ santa.about
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "N/A"]
 index = 0
-while index < 10
+while index < 100
     santas = Santa.new(example_genders.sample, example_ethnicities.sample)
     santas.age = rand(0..140)
     santas.about

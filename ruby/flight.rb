@@ -1,3 +1,5 @@
+#Release 1: Mix in a Module
+# -----------------------------------------------------------------
 module Flight
     def take_off(altitude)
         puts "Taking off and ascending until reaching #{altitude}..."

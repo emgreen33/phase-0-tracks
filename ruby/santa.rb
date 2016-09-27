@@ -45,14 +45,16 @@ end
 #     santas << Santa.new(genders[i], ethnicities[i])
 # end
 
-santa= Santa.new("female", "white")
-santa.about
-santa.gender = "male"
-santa.about
-santa.get_mad_at("Dasher")
-santa.about
-santa.celebrate_birthday
-santa.about
+
+#Driver Code
+# santa= Santa.new("female", "white")
+# santa.about
+# santa.gender = "male"
+# santa.about
+# santa.get_mad_at("Dasher")
+# santa.about
+# santa.celebrate_birthday
+# santa.about
 
 # -----------------------------------------------------------------------------------
 

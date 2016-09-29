@@ -18,7 +18,7 @@ class Hangman
             puts "You already guessed that letter"
         else
             @guessed_letters << letter
-            @guesses_left -= 1
+            @guesses_left -= 1 unless @word.count(letter) > 1
             letter
         end
     end
@@ -28,6 +28,9 @@ class Hangman
         @word.length.times do | index |
             if @word_letters[index] == letter
                 @blank_lines[index] = letter
+                if @word.count(letter) == 1
+                    @guesses_left += 1
+                end
             end
         end
     end

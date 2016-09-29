@@ -1,7 +1,7 @@
 
 
 class Hangman
-    attr_reader :word, :blank_lines, :guesses_left
+    attr_reader :word, :guesses_left
 
     def initialize(word)
         @word = word
@@ -45,7 +45,7 @@ end
 # Driver Code User Interface
 # Ask Player 1 for the word
 puts "Welcome to hangman! Player One please enter the word to be guessed: "
-word = gets.chomp
+word = gets.chomp.downcase
 new_game = Hangman.new(word)
 
 # Driver code to check Player 2's letters each time:
@@ -54,13 +54,13 @@ while true
         puts "#{new_game.blank_lines.center(23)}"
         puts "Remaining guesses left: #{new_game.guesses_left}"
         puts "Enter a letter to guess: "
-        letter = gets.chomp
+        letter = gets.chomp.downcase
         new_game.check(letter)
         if new_game.wins_game?
-            puts "Congratulations! You won with #{new_game.guesses_left} left!"
+            puts "Congratulations! You won with #{new_game.guesses_left} left! :D"
             false
         elsif !new_game.wins_game? && new_game.guesses_left == 0
-            puts "Boo, you suck... Try again nex time."
+            puts "Boo, you suck... Try again next time. :("
             false
         end
     end

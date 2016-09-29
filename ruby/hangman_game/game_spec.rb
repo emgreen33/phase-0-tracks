@@ -11,3 +11,6 @@
 #                         - decrease guesses left by 1
 # - The game is won if the guessed letter word is the same as the given word
 
+require_relative 'game'
+
+

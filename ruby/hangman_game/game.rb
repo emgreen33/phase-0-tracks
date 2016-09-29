@@ -57,8 +57,10 @@ while true
         letter = gets.chomp
         new_game.check(letter)
         if new_game.wins_game?
+            puts "Congratulations! You won with #{new_game.guesses_left} left!"
             false
         elsif !new_game.wins_game? && new_game.guesses_left == 0
+            puts "Boo, you suck... Try again nex time."
             false
         end
     end

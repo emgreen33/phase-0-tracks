@@ -1,7 +1,7 @@
 
 
 class Hangman
-    attr_reader :word, :blank_lines, :guesses_left
+    attr_reader :word, :guesses_left
 
     def initialize(word)
         @word = word

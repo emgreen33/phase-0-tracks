@@ -39,8 +39,18 @@ end
 
 
 # Driver Code User Interface
+# Ask Player 1 for the word
 puts "Welcome to hangman! Player One please enter the word to be guessed: "
 word = gets.chomp
 new_game = Hangman.new(word)
+
+# Driver code to check Player 2's letters each time:
+while true
+    until new_game.wins_game? | | new_game.guesses_left == 0
+        puts "#{new_game.blank_lines}"
+        puts "Remaining guesses left: #{new_game.guesses_left}"
+        puts "Enter a letter to guess: "
+        letter = gets.chomp
+
 
 

@@ -32,7 +32,7 @@ class Hangman
         end
     end
 
-    def wins_game?(blank_lines, word)
+    def wins_game?
         @blank_lines.join("") == @word
     end
 end
@@ -46,11 +46,21 @@ new_game = Hangman.new(word)
 
 # Driver code to check Player 2's letters each time:
 while true
-    until new_game.wins_game? | | new_game.guesses_left == 0
+    until new_game.wins_game? || new_game.guesses_left == 0
         puts "#{new_game.blank_lines}"
         puts "Remaining guesses left: #{new_game.guesses_left}"
         puts "Enter a letter to guess: "
         letter = gets.chomp
+        new_game.check(letter)
+        if new_game.wins_game?
+            false
+        elsif !new_game.wins_game? && new_game.guesses_left == 0
+            false
+        end
+    end
+    puts "#{new_game.blank_lines}"
+    break
+end
 
 
 

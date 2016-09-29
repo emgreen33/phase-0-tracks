@@ -15,4 +15,22 @@
 
 require_relative 'game'
 
+describe Hangman do
+    let(:game) { Hangman.new }
 
+    it "checks if the letter guessed is valid" do
+        expect(game.good_letter("b")).to eq "b"
+    end
+
+    it "checks if a number is guessed an error is given" do
+        expect(game.good_letter("9")).to eq false
+    end
+
+    it "checks if a letter is in a word" do
+        expect(game.check("a", "abc")).to eq true
+    end
+
+    it "checks if a player has won the game" do
+        expect(game.wins_game?(["a", "b"], "ab")).to eq true
+    end
+end

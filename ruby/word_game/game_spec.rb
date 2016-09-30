@@ -11,7 +11,7 @@
 #           - If the letter is in the word
 #                   - replace all instances of the letter in the blank line word
 # - Check if the player has won the game by comparing the blank word with the given word
-#---------------------
+# ----------------------------------------------------------------------------------------------------------------------------------------
 
 require_relative 'game'
 

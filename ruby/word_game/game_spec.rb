@@ -17,7 +17,11 @@ require_relative 'game'
 
 describe Hangman do
 
-    let(:game) { Hangman.new("bater") }
+    let(:game) { Hangman.new("bat") }
+
+    it "checks if a player has won the game" do
+        expect(game.wins_game?).to eq false
+    end
 
     it "checks if the letter guessed is valid, a number, or already guessed" do
         expect(game.good_letter("b")).to eq true
@@ -25,7 +29,7 @@ describe Hangman do
         expect(game.good_letter("b")). to eq "You already guessed that letter."
     end
 
-    it "checks if a letter is in a word" do
+    it "calls upon a helper method to check the guessed letter" do
         expect(game.check("b")).to eq "Good guess!"
         expect(game.check("c")).to eq "Not in word."
         expect(game.check("9")).to eq "Please enter a valid letter."
@@ -33,21 +37,24 @@ describe Hangman do
 
     it "checks if a letter is in a word" do
         expect(game.in_word?("m")).to eq "Not in word."
-        expect(game.in_word?("e")).to eq "Good guess!"
+        expect(game.in_word?("a")).to eq "Good guess!"
     end
 
-    it "replaces a blank line with the correct letter" do
-        expect(game.fill_blank("x")).to eq "_____"
-        expect(game.fill_blank("b")).to eq "b____"
+    it "replaces a blank line with the correct letter, and checks if the game was won" do
+        expect(game.fill_blank("x")).to eq "___"
+        expect(game.fill_blank("b")).to eq "b__"
+        expect(game.fill_blank("a")).to eq "ba_"
+        expect(game.fill_blank("t")).to eq "bat"
+        expect(game.wins_game?).to eq true
     end
 
     it "checks that game is reduced by 1" do
-        expect(game.guesses_reduced).to eq 4
-        expect(game.guesses_reduced).to eq 3
+        expect(game.guesses_reduced).to eq 2
+        expect(game.guesses_reduced).to eq 1
     end
 
     it "checks that blank line array joins together" do
-        expect(game.blank_lines).to eq "_____"
+        expect(game.blank_lines).to eq "___"
     end
 
     it "checks if a player has won the game" do

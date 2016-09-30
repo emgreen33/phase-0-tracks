@@ -29,15 +29,10 @@
 # output: print a clean list to user
 
 #Release 1: Initial Solution
-food = "carrots apples cereal pizza"
-# shopping_list = {}
-# def create_list(groceries, shopping_list)
 def create_list(groceries)
     shopping_list = {}
     grocery_array = groceries.split(" ")
     grocery_array.each do | item |
-        # shopping_list[item] = 1
-        # add_item(item, 1, shopping_list)
         add_item(item, 1, shopping_list)
     end
     print_list(shopping_list)
@@ -47,12 +42,6 @@ def add_item(item, quantity, shopping_list)
     shopping_list[item] = quantity
     print_list(shopping_list)
 end
-
-# def add_item(item, quantity)
-#     shopping_list = create_list(food)
-#     shopping_list[item] = quantity
-#     shopping_list
-# end
 
 def remove_item(item, shopping_list)
     if shopping_list.has_key?(item)
@@ -78,10 +67,10 @@ def print_list(shopping_list)
     end
 end
 
-# p create_list(food, shopping_list)
+#Driver Code to Test:
+food = "carrots apples cereal pizza"
 shopping_list = create_list(food)
 p add_item("cheese", 2, shopping_list)
-# p add_item("cheese", 2)
 p remove_item("carrots", shopping_list)
 p update_item("pizza", 5, shopping_list)
 p print_list(shopping_list)

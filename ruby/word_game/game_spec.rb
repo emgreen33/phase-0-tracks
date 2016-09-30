@@ -43,6 +43,7 @@ describe Hangman do
 
     it "checks that game is reduced by 1" do
         expect(game.guesses_reduced).to eq 4
+        expect(game.guesses_reduced).to eq 3
     end
 
     it "checks that blank line array joins together" do

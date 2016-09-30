@@ -65,25 +65,25 @@ end
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # Ask Player 1 for the word:
 
-puts "Welcome to hangman! Player One please enter the word to be guessed: "
-word = gets.chomp.downcase
-new_game = Hangman.new(word)
+# puts "Welcome to hangman! Player One please enter the word to be guessed: "
+# word = gets.chomp.downcase
+# new_game = Hangman.new(word)
 
-# Ask Player 2 to guess the letters of the word:
-while true
-    until new_game.wins_game? || new_game.guesses_left == 0
-        puts "#{new_game.blank_lines.center(23)}"
-        puts "Remaining guesses left: #{new_game.guesses_left}"
-        puts "Enter a letter to guess: "
-        letter = gets.chomp.downcase
-        new_game.check(letter)
-        if new_game.wins_game?
-            puts "Congratulations! You won with #{new_game.guesses_left} left!"
-            false
-        elsif !new_game.wins_game? && new_game.guesses_left == 0
-            puts "Boo, you suck... Try again next time."
-            false
-        end
-    end
-    break
-end
+# # Ask Player 2 to guess the letters of the word:
+# while true
+#     until new_game.wins_game? || new_game.guesses_left == 0
+#         puts "#{new_game.blank_lines.center(23)}"
+#         puts "Remaining guesses left: #{new_game.guesses_left}"
+#         puts "Enter a letter to guess: "
+#         letter = gets.chomp.downcase
+#         new_game.check(letter)
+#         if new_game.wins_game?
+#             puts "Congratulations! You won with #{new_game.guesses_left} left!"
+#             false
+#         elsif !new_game.wins_game? && new_game.guesses_left == 0
+#             puts "Boo, you suck... Try again next time."
+#             false
+#         end
+#     end
+#     break
+# end

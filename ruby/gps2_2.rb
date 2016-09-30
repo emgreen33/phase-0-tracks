@@ -75,4 +75,11 @@ p remove_item("carrots", shopping_list)
 p update_item("pizza", 5, shopping_list)
 p print_list(shopping_list)
 
+#Reflection:
+#It's extremely important to be consistent with how you refer to parameters, even with general english being used.
+# Hashes allow you to assign key value pairs which is extremely useful when overriding or reassigning values, iterating over an array to make the keys did require an additional step where we broke the strings up but it worked well.
+# A method returns an implicit value if no explicit return method is called, in each of our methods we called upon the print method to return the newly modified list.
+# You can pass any object into a method as an argument, even assign the result of a method to a variable which can then be passed in as an argument
+# You can pass information between methods by using a variable as the same parameter/argument for each method, i.e. here we had shopping_list assigned to the result of create_list which was called upon by different methods. Also by calling a method within another method calls the result from that method.
+# This challenge solidifed to me how methods can be called upon each other, and global variables can be iterated upon by the same methods multiple times without declaring a new hash each time.
 

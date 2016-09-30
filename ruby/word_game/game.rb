@@ -6,7 +6,7 @@ class Hangman
         @blank_lines = ("_" * word.length).split("")
         @guesses_left = word.length
         @word_letters = @word.split("")
-        @guessed_letters = ["a"]
+        @guessed_letters = []
     end
 
     def good_letter(letter)

@@ -19,12 +19,8 @@ describe Hangman do
 
     let(:game) { Hangman.new("bat") }
 
-    it "checks if a player has won the game" do
-        expect(game.wins_game?).to eq false
-    end
-
     it "checks if the letter guessed is valid, a number, or already guessed" do
-        expect(game.good_letter("b")).to eq true
+        game.good_letter("b")
         expect(game.good_letter("9")).to eq "Please enter a valid letter."
         expect(game.good_letter("b")). to eq "You already guessed that letter."
     end
@@ -40,25 +36,27 @@ describe Hangman do
         expect(game.in_word?("a")).to eq "Good guess!"
     end
 
-    it "replaces a blank line with the correct letter, and checks if the game was won" do
-        expect(game.fill_blank("x")).to eq "___"
-        expect(game.fill_blank("b")).to eq "b__"
-        expect(game.fill_blank("a")).to eq "ba_"
+    it "checks the lines are replaced with correct letters and not replaced with incorrect letters" do
+        game.fill_blank("x")
+        game.fill_blank("b")
+        game.fill_blank("a")
         expect(game.fill_blank("t")).to eq "bat"
+    end
+
+      it "checks if the game was successfully won" do
+        game.fill_blank("b")
+        game.fill_blank("a")
+        game.fill_blank("t")
         expect(game.wins_game?).to eq true
     end
 
     it "checks that game is reduced by 1" do
-        expect(game.guesses_reduced).to eq 2
+        game.guesses_reduced
         expect(game.guesses_reduced).to eq 1
     end
 
     it "checks that blank line array joins together" do
         expect(game.blank_lines).to eq "___"
-    end
-
-    it "checks if a player has won the game" do
-        expect(game.wins_game?).to eq false
     end
 
 end

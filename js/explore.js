@@ -17,5 +17,5 @@ function reverse(string) {
 }
 
 // Call the function using Javascripts call syntax:
-console.log(reverse("hello"));
+var answer = console.log(reverse("hello"));
 

@@ -17,5 +17,19 @@ function reverse(string) {
 }
 
 // Call the function using Javascripts call syntax:
-var answer = console.log(reverse("hello"));
+// var answer = console.log(reverse("hello"));
+var answer = reverse("hello");
 
+
+// Add driver code that prints the variable if some condition is true. The condition can be a silly one, like 1 == 1.
+
+var willThisRun = true;
+var tryItOut = false
+
+if (willThisRun && !tryItOut) {
+    console.log("Hey it worked! " + answer);
+} else if (willThisRun && tryItOut) {
+    console.log("It didn't work.");
+} else {
+    console.log("Let's try again...");
+}

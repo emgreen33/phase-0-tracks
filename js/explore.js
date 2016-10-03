@@ -25,7 +25,7 @@ var answer = reverse("hello");
 // Add driver code that prints the variable if some condition is true.
 
 var willThisRun = true;
-var tryItOut = false
+var tryItOut = false;
 
 if (willThisRun && !tryItOut) {
     console.log("Hey it worked! " + answer);

@@ -1,4 +1,5 @@
 // Release 4: Write a reverse function
+
 // Declare a function that takes in a string as a parameter
 // Declare an empty string variable reversedString
 // Create a for loop,
@@ -17,11 +18,11 @@ function reverse(string) {
 }
 
 // Call the function using Javascripts call syntax:
-// var answer = console.log(reverse("hello"));
+
 var answer = reverse("hello");
 
 
-// Add driver code that prints the variable if some condition is true. The condition can be a silly one, like 1 == 1.
+// Add driver code that prints the variable if some condition is true.
 
 var willThisRun = true;
 var tryItOut = false

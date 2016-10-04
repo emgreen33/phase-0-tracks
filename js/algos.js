@@ -8,13 +8,13 @@
 // Return the longest phrase variable
 
 function longestPhrase(array) {
-    longest = array[0];
+    var longest = array[0];
     for (var i = 0; i < array.length; i++ ) {
         if (array[i].length > longest.length) {
             longest = array[i];
-        };
+        }
     } return longest;
-};
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 //Release 1: Find a Key-Value Match
@@ -32,9 +32,9 @@ function hasMatch(object1, object2) {
     for (var i = 0; i < keys1.length; i++ ) {
         if (object1[keys1[i]] === object2[keys1[i]]) {
             return true;
-        };
-    }; return false;
-};
+        }
+    } return false;
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 // Release 2: Generate Random Test Data
@@ -67,7 +67,6 @@ function randomTestData(number) {
 
 //---------------------------------------------------------------------------------------------------------------------
 //Driver Code:
-
 //Release 0
 var sample = ["long phrase","longest phrase","longer phrase"];
 console.log(longestPhrase(sample));

@@ -51,25 +51,47 @@ function hasMatch(object1, object2) {
         // Reset the word string to empty string
 // Return the new random array
 
+function randomTestData(number) {
+    var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    var randomArray = [];
+    var wordString = "";
+    for (var i = 0; i < number; i++ ) {
+        var randomNum = Math.floor(Math.random() * 10) + 1;
+        for (var j = 0; j < randomNum; j++ ) {
+            var randomLetter = Math.floor(Math.random() * 25) + 0;
+            wordString += alphabet[randomLetter];
+        } randomArray.push(wordString);
+        wordString = "";
+    } return randomArray;
+}
 
-// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
-
+console.log(randomTestData(5));
+console.log(randomTestData(3));
 
 //---------------------------------------------------------------------------------------------------------------------
 //Driver Code:
 
 //Release 0
-// var sample = ["long phrase","longest phrase","longer phrase"];
-// console.log(longestPhrase(sample));
-// var anotherSample = ["shortest", "second longest", "the most long of all", "wrong"];
-// console.log(longestPhrase(anotherSample));
-// var finalSample = ["this is", "another test", "to make sure", "my longest phrase function works"];
-// console.log(longestPhrase(finalSample));
+var sample = ["long phrase","longest phrase","longer phrase"];
+console.log(longestPhrase(sample));
+var anotherSample = ["shortest", "second longest", "the most long of all", "wrong"];
+console.log(longestPhrase(anotherSample));
+var finalSample = ["this is", "another test", "to make sure", "my longest phrase function works"];
+console.log(longestPhrase(finalSample));
 
 
-// //Release 1
+// Release 1
 // var personOne = {name: "Bob", age: 30, city: "Chicago"};
 // var personTwo = {name: "Emily", age: 25, city: "Chicago"};
 // console.log(hasMatch(personOne, personTwo));
 
+
+//Release 2
+// Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
+
+for (var i = 0; i < 10; i++ ) {
+    var test = randomTestData(5);
+    console.log(test);
+    console.log("The longest word is:" + longestPhrase(test));
+}
 

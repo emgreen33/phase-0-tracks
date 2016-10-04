@@ -65,28 +65,25 @@ function randomTestData(number) {
     } return randomArray;
 }
 
-console.log(randomTestData(5));
-console.log(randomTestData(3));
-
 //---------------------------------------------------------------------------------------------------------------------
 //Driver Code:
 
 //Release 0
 var sample = ["long phrase","longest phrase","longer phrase"];
 console.log(longestPhrase(sample));
-var anotherSample = ["shortest", "second longest", "the most long of all", "wrong"];
-console.log(longestPhrase(anotherSample));
 var finalSample = ["this is", "another test", "to make sure", "my longest phrase function works"];
 console.log(longestPhrase(finalSample));
 
 
 // Release 1
-// var personOne = {name: "Bob", age: 30, city: "Chicago"};
-// var personTwo = {name: "Emily", age: 25, city: "Chicago"};
-// console.log(hasMatch(personOne, personTwo));
+var personOne = {name: "Bob", age: 30, city: "Chicago"};
+var personTwo = {name: "Emily", age: 25, city: "Chicago"};
+console.log(hasMatch(personOne, personTwo));
 
 
 //Release 2
+console.log(randomTestData(5));
+console.log(randomTestData(3));
 // Add driver code that does the following 10 times: generates an array, prints the array, feeds the array to your "longest word" function, and prints the result.
 
 for (var i = 0; i < 10; i++ ) {
@@ -94,4 +91,3 @@ for (var i = 0; i < 10; i++ ) {
     console.log(test);
     console.log("The longest word is:" + longestPhrase(test));
 }
-

@@ -17,7 +17,7 @@ for (var i = 0; i < names.length; i++) {
 console.log(horses);
 
 
-//Rlease 2:
+//Release 2:
 function Car(color, year, is_automatic) {
 
     console.log("Initializing car:", this);
@@ -29,7 +29,7 @@ function Car(color, year, is_automatic) {
     this.honk = function(int) {
         for (var i = 0; i < int; i++) {
             console.log("*honk*");
-        }
+        };
     }
 
     console.log("Car complete:", this);
@@ -41,10 +41,11 @@ var car2 = new Car("blue", 2016, false);
 var car3 = new Car("yellow", 2002, true);
 
 car3.honk(3);
+console.log(Object.keys(car1));
 
 
 //Release 3:
-var keys1 = Object.keys(car2);
+//var keys1 = Object.keys(car2);
 // var values1 = Object.values(car2);
-console.log(keys1);
+//console.log(keys1);
 // console.log(values1);

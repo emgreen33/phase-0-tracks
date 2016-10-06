@@ -1,11 +1,13 @@
 # Virus Predictor
 
 # I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# We spent [#] hours on this challenge
 
+#Release 1
 # EXPLANATION OF require_relative
-#
-#
+# require relative refers to data and files stored in the same directory that you want to import
+# require needs a bigger specification of location of the file you want access too
+
 require_relative 'state_data'
 
 class VirusPredictor

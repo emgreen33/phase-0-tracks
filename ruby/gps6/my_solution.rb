@@ -42,12 +42,11 @@ class VirusPredictor
 
   # Returns and stores the speed of spread as a local variable in the method which is called upon in above methods
   def speed_of_spread
-    speed = 2.5
     if @population_density >= 200
-      speed -= 2.0
+      speed = 0.5
     else @population_density < 200
       multiplier = (@population_density/50).floor
-      speed -= (multiplier * 0.5)
+      speed = 2.5 - (multiplier * 0.5)
     end
   end
 end

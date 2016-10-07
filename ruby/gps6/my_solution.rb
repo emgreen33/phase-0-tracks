@@ -1,5 +1,4 @@
 # Virus Predictor
-
 # I worked on this challenge [by myself, with: Zilvinas Peciura ].
 # We spent [1.5] hours on this challenge
 
@@ -18,15 +17,17 @@ class VirusPredictor
     @population_density = population_density
   end
 
-  # runs the predicted deaths and speed of spread methods using population density, population and state name, main function that is called
+  # Runs the predicted deaths and speed of spread methods using population density, population and state name, main function that is called
   def virus_effects
     puts "#{@state} will lose #{predicted_deaths} people in this outbreak and will spread across the state in #{speed_of_spread} months.\n\n"
   end
-  #It protects from user modifing methods and is only able to be accessed within the scope of the class itself. Other methods can call upon them within the class, but they are not directly accessible outside.
+
+  #---------------------
+  # It protects from user modifing methods and is only able to be accessed within the scope of the class itself. Other methods can call upon them within the class, but they are not directly accessible outside.
   private
 
   # Returns predicted deaths for state dependent on the states population density
-  # Takes in populationd ensity and popuation sate as parameters, this is stored as the local variable number of deaths.
+  # Takes in populationd ensity and popuation sate as parameters, this is stored as the local variable number of deaths
 
   def predicted_deaths
     # predicted deaths is solely based on population density

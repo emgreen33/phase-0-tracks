@@ -30,36 +30,26 @@ class VirusPredictor
 
   def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
+     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
+    elsif @population_density < 50
       number_of_deaths = (@population * 0.05).floor
-    end
-  end
-
-  # Gives a speed of spread for the state between 0 and 2.5 dependent on the population density, this is being stored as the local variable "speed"
-
-  def speed_of_spread
-    speed = 0.0
-    if @population_density >= 200
-      speed += 0.5
-    elsif @population_density >= 150
-      speed += 1
-    elsif @population_density >= 100
-      speed += 1.5
-    elsif @population_density >= 50
-      speed += 2
     else
-      speed += 2.5
+      multiplier = (@population_density/50).floor
+      number_of_deaths = (@population * (multiplier * 0.1)).floor
     end
   end
 
+  # Returns and stores the speed of spread as a local variable in the method which is called upon in above methods
+  def speed_of_spread
+    speed = 2.5
+    if @population_density >= 200
+      speed -= 2.0
+    else @population_density < 200
+      multiplier = (@population_density/50).floor
+      speed -= (multiplier * 0.5)
+    end
+  end
 end
 
 #=======================================================================
@@ -91,4 +81,4 @@ alaska.virus_effects
 # What does require_relative do? How is it different from require? Require relative imports data from specified file saved locally in the same directory, require can import from elsewhere but you have to specify either the direct file route or file path
 # What are some ways to iterate through a hash? You can iterate through a hash using each statements and calling upon the key values, these instances can be printed out or stored in data structures
 # When refactoring virus_effects, what stood out to you about the variables, if anything? The variables used in virus effects were declared instance variables in the initialize method, they were unneccessary parameters as they were accessible already in the class
-# What concept did you most solidify in this challenge? the difference between require relative and require was solidified to me, originally I thought require meant you were calling Ruby classes/libraries. Also, I learnt that I can sometimes *over* refactor and there is a line to walk between making it too complicated for simplicity.
+# What concept did you most solidify in this challenge? the difference between require relative and require was solidified to me, originally I thought require meant you were calling Ruby classes/libraries. Also, I learnt that I can sometimes *over* refactor and there is a line to walk between making it too complicated for simplicity

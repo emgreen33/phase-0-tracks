@@ -6,7 +6,7 @@
 #Release 1
 # EXPLANATION OF require_relative
 # Require relative refers to data and files stored in the same directory that you want to import
-# Require needs a bigger specification of location of the file you want access too
+# Require needs a bigger specification of location of the file you want access, this doesn't mean importing ruby modules
 
 require_relative 'state_data'
 
@@ -22,11 +22,11 @@ class VirusPredictor
   def virus_effects
     puts "#{@state} will lose #{predicted_deaths} people in this outbreak and will spread across the state in #{speed_of_spread} months.\n\n"
   end
-  #It protects from user modifing methods and it is only beeing called insde the class.
+  #It protects from user modifing methods and is only able to be accessed within the scope of the class itself. Other methods can call upon them within the class, but they are not directly accessible outside.
   private
 
   # Returns predicted deaths for state dependent on the states population density
-  # Takes in populationd ensity and popuation sate as parameters, this is being stored as the local variable number of deaths
+  # Takes in populationd ensity and popuation sate as parameters, this is stored as the local variable number of deaths.
 
   def predicted_deaths
     # predicted deaths is solely based on population density

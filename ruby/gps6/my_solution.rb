@@ -27,7 +27,8 @@ class VirusPredictor
 
   # Returns predicted deaths for state dependent on the states population density
   # Takes in populationd ensity and popuation sate as parameters, this is being stored as the local variable number of deaths
-  def predicted_deaths(population_density, population, state)
+
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -40,13 +41,11 @@ class VirusPredictor
     else
       number_of_deaths = (@population * 0.05).floor
     end
-
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
 
   # Gives a speed of spread for the state between 0 and 2.5 dependent on the population density, this is being stored as the local variable "speed"
-  def speed_of_spread(population_density, state)
+
+  def speed_of_spread
     speed = 0.0
     if @population_density >= 200
       speed += 0.5
@@ -59,9 +58,6 @@ class VirusPredictor
     else
       speed += 2.5
     end
-
-    puts " and will spread across the state in #{speed} months.\n\n"
-
   end
 
 end

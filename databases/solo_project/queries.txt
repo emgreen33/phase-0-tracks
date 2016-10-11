@@ -6,7 +6,7 @@ SELECT * FROM authors;
 4|Judy Blume|19700704
 
 2. Update an item that meets some condition 
-UPDATE books SET best_seller="true" WHERE title="Sql Is Fun
+UPDATE books SET best_seller="true" WHERE title="Sql Is Fun";
 
 3. Display the information in both tables using one query.
 SELECT * FROM books, authors WHERE books.author_id = authors.id;

@@ -1,0 +1,52 @@
+1. Display the information in one table:
+SELECT * FROM authors;
+1|Gillian Finch|19300908
+2|Dan Brown|19501010
+3|Emily Green|19911011
+4|Judy Blume|19700704
+
+2. Update an item that meets some condition 
+UPDATE books SET best_seller="true" WHERE title="Sql Is Fun
+
+3. Display the information in both tables using one query.
+SELECT * FROM books, authors WHERE books.author_id = authors.id;
+1|Gone Girl|Mystery|20141003|true|1|1|Gillian Finch|19300908
+2|Dark Places|Mystery|20120103|true|1|1|Gillian Finch|19300908
+3|The Da Vinci Code|Thriller|20031009|true|2|2|Dan Brown|19501010
+4|Inferno|Mystery|20130405|false|2|2|Dan Brown|19501010
+5|Sql Is Fun|Education|20161012|true|3|3|Emily Green|19911011
+6|Are You There God?|Teen|20000102|true|4|4|Judy Blume|19700704
+
+4. Display a narrower selection of columns
+SELECT books.title, authors.id FROM books INNER JOIN authors ON books.author_id=authors.id;
+Gone Girl|1
+Dark Places|1
+The Da Vinci Code|2
+Inferno|2
+Sql Is Fun|3
+Are You There God?|4
+
+5. Delete an item that meets some condition
+DELETE FROM authors WHERE name="Emily Green";
+
+Release 3: Research on your own
+INNER JOIN: returns all rows from both tables where there is a match. 
+SELECT books.title, authors.id FROM books INNER JOIN authors ON books.author_id=authors.id;
+Gone Girl|1
+Dark Places|1
+The Da Vinci Code|2
+Inferno|2
+Are You There God?|4
+
+LEFT JOIN: returns all rows from first table, even if there aren't any matches in the second. 
+SELECT books.title, authors.id FROM books LEFT JOIN authors ON books.author_id=authors.id;
+Gone Girl|1
+Dark Places|1
+The Da Vinci Code|2
+Inferno|2
+Sql Is Fun|
+Are You There God?|4
+
+RIGHT JOIN: returns all rows from second table, even if there aren't any matches in the first. 
+SELECT books.title, authors.id FROM books RIGHT JOIN authors ON books.author_id=authors.id;
+Error: RIGHT and FULL OUTER JOINs are not currently supported

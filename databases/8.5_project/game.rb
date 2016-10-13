@@ -40,9 +40,9 @@ def create_person(db, name, age)
 end
 
 # Make some players
-10.times do
-    create_person(db, Faker::Name.name, rand(10..20))
-end
+# 10.times do
+#     create_person(db, Faker::Name.name, rand(10..20))
+# end
 
 table_data = db.execute("SELECT name, age FROM game")
 
@@ -56,31 +56,31 @@ people.each do | person |
     puts person.print
 end
 
-# puts "=================="
-# puts "UPDATED LIST:"
-# puts "=================="
-# # Change their age
-# people.each do | person |
-#     person.age += rand(1..25)
-# end
+puts "=================="
+puts "UPDATED LIST:"
+puts "=================="
+# Change their age
+people.each do | person |
+    person.age += rand(1..25)
+end
 
-# people.each do | person |
-#     puts person.print
-# end
+people.each do | person |
+    puts person.print
+end
 
-# def update(db, name, age)
-#     query = "UPDATE game SET age =#{age} WHERE name=\"#{name}\""
-#     db.execute(query)
-# end
+def update(db, name, age)
+    query = "UPDATE game SET age =#{age} WHERE name=\"#{name}\""
+    db.execute(query)
+end
 
-# people.each do |person|
-#     table_data << person.update_table
-# end
+people.each do |person|
+    table_data << person.update_table
+end
 
 # p table_data
 
-# table_data.each do | name, age |
-#     update(db,name,age)
-# end
+table_data.each do | name, age |
+    update(db,name,age)
+end
 
 

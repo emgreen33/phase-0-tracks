@@ -1,7 +1,7 @@
 require_relative 'db_methods.rb'
 require_relative 'person.rb'
 
-db = SQLite3::Database.new("test.db")
+db = SQLite3::Database.new("game.db")
 
 #creates a game table if there isn't one already
 db.execute(create_table_people)

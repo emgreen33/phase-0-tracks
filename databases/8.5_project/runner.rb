@@ -29,9 +29,9 @@ puts "UPDATED LIST:"
 puts "=================="
 
 # Change the players age by random amount
-people.each do | person |
-    person.age += rand(1..25)
-end
+# people.each do | person |
+#     person.age += rand(1..25)
+# end
 
 #print each player with updated age
 people.each do | person |

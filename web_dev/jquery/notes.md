@@ -12,3 +12,8 @@
 - What are the benefits/can it do?
 - Create project with JQuery
 
+###Reminders:
+* Take some breaks
+* Revisit notes
+
+

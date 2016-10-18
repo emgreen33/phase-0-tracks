@@ -32,5 +32,3 @@ def highest_scorers(db, name, age, score)
     query = "SELECT name, score FROM game WHERE score >=30"
     db.execute(query)
 end
-
-$db.execute("SELECT name FROM teen WHERE subs >= 5000000 AND style = '#{content}'")

@@ -75,3 +75,30 @@ get '/:num_1/plus/:num_2' do
   result << answer.to_s
 end
 #http://localhost:9393/5/plus/1
+
+
+#Optional bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
+get '/student' do
+  students = db.execute("SELECT * FROM students")
+  response = ""
+  students.each do |student|
+    if student['name'] == "#{params[:name]}"
+      response << student['id']
+    end
+  end
+  response
+end
+
+#localhost:9393/students?campus=CHI
+
+
+
+#Release 1: Research on your own
+# Is Sinatra the only web app library in Ruby? What are some others?
+# Rack 'n' Alternatives • Ruby on Rails • Sinatra • Volt • Async Web (Socket) Frameworks • Web Service Frameworks • Micro Framework Alternatives • "Full Stack" Macro Framework Alternatives • More / Misc Frameworks • Meta
+
+# Are SQLite and the sqlite3 gem your only options for using a database with Sinatra? What are some others?
+# Heroku, Datamapper
+
+# What is meant by the term web stack?
+# It refers to the components or technologies/languages/operating sytems/etc used to build a web site. For instance the "LAMP" stack is: Linux, Apache, MySQL, PHP

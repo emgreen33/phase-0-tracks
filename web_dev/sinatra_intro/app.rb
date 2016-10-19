@@ -78,19 +78,13 @@ end
 
 
 #Optional bonus: Make a route that allows the user to search the database in some way -- maybe for students who have a certain first name, or some other attribute. If you like, you can simply modify the home page to take a query parameter, and filter the students displayed if a query parameter is present.
-get '/student' do
-  students = db.execute("SELECT * FROM students")
-  response = ""
-  students.each do |student|
-    if student['name'] == "#{params[:name]}"
-      response << student['id']
-    end
-  end
-  response
+get '/student/:age' do
+  student = db.execute("SELECT name FROM students WHERE age=?", [params[:age]])[0]
+  student[0].to_s
 end
 
-#localhost:9393/students?campus=CHI
-
+#http://localhost:9393/student/77
+#Herminio Moore II
 
 
 #Release 1: Research on your own

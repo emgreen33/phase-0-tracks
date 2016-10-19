@@ -1,0 +1,15 @@
+#wave-photo {
+  width: 225px;
+  height: auto;
+}
+
+p {
+    color: blue;
+    font-family: courier;
+    font-size: 160%;
+}
+
+ol {
+    font-family: courier;
+    font-size: 160%;
+}

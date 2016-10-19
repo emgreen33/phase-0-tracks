@@ -47,9 +47,7 @@ get '/students/:id' do
   student.to_s
 end
 
-
-#route params are like arguments to a method
-
+#Release 0: Add Routes
 #write a /contact route that displays an address (you can make up the address).
 get '/contact/:address' do
   address = params[:address]
@@ -59,7 +57,6 @@ end
 
 
 #A /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". If the query parameter is not present, the route simply says "Good job!"
-
 get '/great_job' do
   name = params[:name]
   if name
@@ -68,3 +65,6 @@ get '/great_job' do
     "Good job!"
   end
 end
+#http://localhost:9393/great_job
+#http://localhost:9393/great_job?name=Emily
+

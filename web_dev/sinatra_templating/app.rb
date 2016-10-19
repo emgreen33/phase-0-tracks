@@ -25,3 +25,17 @@ post '/students' do
 end
 
 # add static resources
+get '/students/chicago' do
+    @students = db.execute("SELECT * FROM students WHERE campus = 'CHI'")
+      erb :chicago
+end
+
+#create form to delete current students
+get '/students/remove' do
+    erb :delete_student
+end
+
+post '/students_remove' do
+    db.execute("DELETE FROM students WHERE name=?", [params['name']])
+    redirect '/'
+end

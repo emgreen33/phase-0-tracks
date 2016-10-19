@@ -9,9 +9,9 @@ db.results_as_hash = true
 # add a query parameter
 # GET / (the home directory is /)
 #localhost.8888/?name=Jen&age=35
-get '/' do
-  "#{params[:name]} is #{params[:age]} years old."
-end
+# get '/' do
+#   "#{params[:name]} is #{params[:age]} years old."
+# end
 
 # write a GET route with
 # route parameters
@@ -68,3 +68,10 @@ end
 #http://localhost:9393/great_job
 #http://localhost:9393/great_job?name=Emily
 
+# write a route that uses route parameters to add two numbers and respond with the result. The data types are tricky here -- when will the data need to be (or arrive as) a string?
+get '/:num_1/plus/:num_2' do
+  result = ""
+  answer= (params[:num_1]).to_i + (params[:num_2]).to_i
+  result << answer.to_s
+end
+#http://localhost:9393/5/plus/1

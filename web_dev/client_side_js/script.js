@@ -25,5 +25,12 @@ function changePhoto () {
     event.target.src = "thumbs.png";
 }
 
+function revertPhoto () {
+    console.log("you changed it again");
+    console.log(event);
+    event.target.src = "wave.png";
+}
+
 var photo = document.getElementById("wave-photo");
 photo.addEventListener("mouseover", changePhoto);
+photo.addEventListener("mouseover", revertPhoto);
